@@ -61,6 +61,12 @@ public class CoffeeMaker {
         return canAddRecipe;
     }
     
+	/**
+	 * Returns true if a recipe does not exist in the 
+	 * coffee maker else return false
+	 * @param r
+	
+	 * @return boolean */
 	boolean chkRecipeExist(Recipe r)
 	{
 		boolean canAddRecipe =true;
@@ -84,7 +90,14 @@ public class CoffeeMaker {
         if(r != null) {
 	        for(int i = 0; i < NUM_RECIPES; i++) {
 	            if(r.equals(recipeArray[i])) {
-	                recipeArray[i] = recipeArray[i]; 
+	            	
+	            	 //Marlene: deleting recipe found
+	                recipeArray[i].setAmtChocolate(0);
+	                recipeArray[i].setAmtCoffee(0);
+	                recipeArray[i].setAmtMilk(0);
+	                recipeArray[i].setAmtSugar(0);
+	                recipeArray[i].setName(null);
+	                recipeArray[i].setPrice(0);
 	                canDeleteRecipe = true;
 	            }
 	        }
